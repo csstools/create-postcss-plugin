@@ -1,0 +1,27 @@
+{
+  "name": "create-postcss-plugin",
+  "version": "1.0.0",
+  "bin": {
+    "create-postcss-plugin": "./index.js"
+  },
+  "description": "Quickly create new PostCSS plugins",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "csstools/create-postcss-plugin",
+  "homepage": "https://github.com/csstools/create-postcss-plugin#readme",
+  "bugs": "https://github.com/csstools/create-postcss-plugin/issues",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "files": [
+    "index.js",
+    "lib/**/*",
+    "template/**/*"
+  ],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "boilerplate"
+  ]
+}
