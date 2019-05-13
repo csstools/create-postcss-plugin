@@ -1,10 +1,7 @@
-const fs = require('./fs');
-const path = require('path');
+import fs from './fs';
+import path from 'path';
 
-const keys = /\$\{([^\}]+)\}/g;
-const patchPkg = ',\n    ".*",\n    "*"';
-
-module.exports = function copydir(__tpl, __out, answers) {
+export default function copyTemplateDir(__tpl, __out, answers) {
 	return fs.readdir(__tpl).then(
 		pathnames => Promise.all(pathnames.map(
 			pathname => fs.lstat(
@@ -20,7 +17,7 @@ module.exports = function copydir(__tpl, __out, answers) {
 						content => fs.writeFile(path.join(__out, pathname), content)
 					)
 				: fs.mkdir(path.resolve(__out, pathname)).then(
-					() => copydir(
+					() => copyTemplateDir(
 						path.resolve(__tpl, pathname),
 						path.resolve(__out, pathname),
 						answers
@@ -28,5 +25,8 @@ module.exports = function copydir(__tpl, __out, answers) {
 				)
 			)
 		))
-	)
+	);
 }
+
+const keys = /\$\{([^\}]+)\}/g;
+const patchPkg = ',\n    ".*",\n    "*"';

@@ -1,8 +1,8 @@
 // tooling
-const https = require('https');
+import https from 'https';
 
 // return first matching user login from github api
-module.exports = email => new Promise(
+export default email => new Promise(
 	(resolve, reject) => {
 		// search for users with the specified email address
 		https.get({

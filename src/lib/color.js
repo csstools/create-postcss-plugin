@@ -25,9 +25,16 @@ const colors = {
 	bgWhite: '\x1b[47m'
 };
 
+const reset = colors.reset;
+
 // method-ified color wrappers
-Object.assign(exports, ...Object.keys(colors).map(
-	color => ({
-		[color]: string => colors[color] + string.replace(colors.reset, colors.reset + colors[color]) + colors.reset
-	})
-));
+export default Object.keys(colors).reduce(
+	(fns, name) => {
+		const color = colors[name];
+
+		fns[name] = string => color + string.replace(reset, reset + color) + reset;
+
+		return fns;
+	},
+	{}
+);

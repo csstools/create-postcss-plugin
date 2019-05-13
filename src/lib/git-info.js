@@ -1,19 +1,21 @@
+import githubUser from './github-user';
+import gitConfig from './git-config';
+
 // caching
-let gitconfig;
 let gituser;
 
 // return parsed git info
-module.exports = key => (gitconfig = gitconfig || require('./gitconfig')).then(
+export default key => gitConfig.then(
 	// ~/.gitconfig user
-	user => {
+	async user => {
 		if (key in user) {
 			// user key
 			return user[key];
 		} else if (key === 'user') {
 			// github api email
-			gituser = gituser || require('./githubuser');
+			gituser = await (gituser || githubUser(user.email));
 
-			return gituser(user.email);
+			return gituser;
 		} else {
 			throw `No ${key} in .gitconfig`
 		}

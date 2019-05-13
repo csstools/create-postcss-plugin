@@ -1,7 +1,7 @@
 // tooling
-const fs   = require('./fs');
-const os   = require('os');
-const path = require('path');
+import fs   from './fs';
+import os   from 'os';
+import path from 'path';
 
 // parsing
 const iniLine    = /\s*\n+\s*/;
@@ -14,7 +14,7 @@ const iniObject = {};
 let iniCurrent = iniObject;
 
 // read ~/.gitconfig
-module.exports = fs.readFile(path.resolve(os.homedir(), '.gitconfig'), 'utf8').then(
+export default fs.readFile(path.resolve(os.homedir(), '.gitconfig'), 'utf8').then(
 	// parse gitconfig as object
 	content => content.split(iniLine).map(
 		item => {

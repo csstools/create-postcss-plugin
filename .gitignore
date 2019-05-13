@@ -8,3 +8,4 @@ package-lock.json
 !.travis.yml
 *.log*
 *.result.css
+/index.js

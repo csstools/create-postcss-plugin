@@ -4,7 +4,7 @@
 [![Build Status][cli-img]][cli-url]
 [![Support Chat][git-img]][git-url]
 
-[${title}] lets you use ... in CSS.
+[${title}] lets you ${desc} in CSS.
 
 ```pcss
 .example { ... }
