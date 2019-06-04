@@ -1,4 +1,8 @@
-# create-postcss-plugin [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][PostCSS]
+# Create PostCSS Plugin [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][PostCSS]
+
+[![NPM Version][npm-img]][npm-url]
+[![Build Status][cli-img]][cli-url]
+[![Gitter Chat][git-img]][git-url]
 
 [Create PostCSS Plugin] lets you quickly create new [PostCSS] plugins with
 documentation, tests, and built in compiling for supported Node environments.
@@ -7,12 +11,48 @@ documentation, tests, and built in compiling for supported Node environments.
 npm init postcss-plugin YOUR_DESTINATION
 ```
 
+Alternatively, you can use the `npx` command:
+
 ```sh
 npx create-postcss-plugin YOUR_DESTINATION
 ```
 
 After completing the instructions, write your plugin to `src/index.js` and
 update `README.md` with further details outlining your plugin functionality.
+
+## Usage
+
+By default, **Create PostCSS Plugin** provides you the following prompts:
+
+```
+Plugin Name: [TITLE]
+Keywords: [KEYWORDS]
+```
+
+Once completed, you will see the following message:
+
+```
+Success! Created PostCSS [TITLE] at [DIRECTORY]
+
+We suggest that you begin by typing:
+  cd [DIRECTORY]
+  npm test
+
+Happy PostCSS-ing!
+```
+
+To skip all prompts, you must at least provide a title and keywords.
+
+```sh
+create-postcss-plugin --title Stuff --keywords comma,separated,keywords
+```
+
+If your system cannot access git user information from `.gitconfig`, you must
+also provide an author, email, and user.
+
+```sh
+create-postcss-plugin --title Stuff --author "Cee S Esse" --email "postcss@postcss.org" --user ceesesse --keywords comma,separated,keywords
+```
 
 ## Options
 
@@ -32,7 +72,7 @@ npm init postcss-plugin --to path/to/plugin
 The `title` argument defines the formal name of the project.
 
 ```sh
-npm init postcss-plugin --title Super
+npm init postcss-plugin --title Stuff
 ```
 
 ```sh
@@ -68,7 +108,7 @@ npm init postcss-plugin --description "use exciting new functions"
 The `author` argument defines the author used by the project package.json.
 
 ```sh
-npm init postcss-plugin --author "Joe Bloggs"
+npm init postcss-plugin --author "Cee S Esse"
 ```
 
 ### email
@@ -81,7 +121,7 @@ npm init postcss-plugin --email "postcss@postcss.org"
 
 ### user
 
-The `user` argument defines the repository user or group hosting the project.
+The `user` argument defines the user or organization hosting the project.
 
 ```sh
 npm init postcss-plugin --user "postcss"
@@ -106,3 +146,10 @@ npm init postcss-plugin --no-install
 
 [Create PostCSS Plugin]: https://github.com/csstools/create-postcss-plugin
 [PostCSS]: https://github.com/postcss/postcss
+
+[cli-img]: https://img.shields.io/travis/csstools/create-postcss-plugin/master.svg
+[cli-url]: https://travis-ci.org/csstools/create-postcss-plugin
+[git-img]: https://img.shields.io/badge/support-chat-blue.svg
+[git-url]: https://gitter.im/postcss/postcss
+[npm-img]: https://img.shields.io/npm/v/create-postcss-plugin.svg
+[npm-url]: https://www.npmjs.com/package/create-postcss-plugin

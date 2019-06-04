@@ -6,12 +6,12 @@ import { exec, pipeExec } from './lib/exec';
 import gitInfo from './lib/git-info';
 import question from './lib/question';
 
-async function main() {
+async function main () {
 	await updateArgs();
 	await createTemplate();
 }
 
-async function updateArgs() {
+async function updateArgs () {
 	if (!args.to) {
 		args.to = './';
 	}
@@ -101,7 +101,7 @@ async function updateArgs() {
 	console.log('');
 }
 
-async function createTemplate() {
+async function createTemplate () {
 	const __tpl = path.join(__dirname, 'template');
 	const __out = path.resolve(process.cwd(), args.to);
 	const execOpts = { cwd: __out };
@@ -130,7 +130,7 @@ async function createTemplate() {
 	}
 }
 
-function getSuccessMessage() {
+function getSuccessMessage () {
 	return `Success! Created ${color.bold(args.title)} at ${color.bold(args.to)}
 
 We suggest that you begin by typing:

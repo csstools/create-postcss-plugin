@@ -22,7 +22,7 @@ Add [${title}] to your project:
 npm install ${id} --save-dev
 ```
 
-Use [${title}] to process your CSS:
+Use **${title}** to process your CSS:
 
 ```js
 const ${idCamelCase} = require('${id}');
@@ -41,7 +41,7 @@ postcss([
 ]).process(YOUR_CSS /*, processOptions */);
 ```
 
-[${title}] runs in all Node environments, with special instructions for:
+**${title}** runs in all Node environments, with special instructions for:
 
 | [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
 | --- | --- | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ postcss([
 
 ...
 
-[cli-img]: https://img.shields.io/travis/${user}/${id}.svg
+[cli-img]: https://img.shields.io/travis/${user}/${id}/master.svg
 [cli-url]: https://travis-ci.org/${user}/${id}
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
 [git-url]: https://gitter.im/postcss/postcss

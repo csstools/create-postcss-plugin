@@ -86,7 +86,7 @@ const fse = {};
 	fse[name] = (pathname, ...args) => {
 		try {
 			// try to execute the native method
-			fs[key](pathname, ...args);
+			fs[name](pathname, ...args);
 		} catch (err) {
 			// if there is no parent directory
 			if (err && err.code === 'ENOENT') {
@@ -94,7 +94,7 @@ const fse = {};
 				fse.mkdirSync(path.dirname(pathname));
 
 				// and then try again
-				fse[key](pathname, ...args)
+				fse[name](pathname, ...args)
 			} else if (err && err.code !== 'EEXIST') {
 				// otherwise, throw any error not about an existing directory
 				throw err;
@@ -175,7 +175,7 @@ fse.copyFile = (source, target) => fse.touchFile(target).then(
 			// copy stream
 			readStream.pipe(writeStream);
 
-			function prereject(err) {
+			function prereject (err) {
 				// destroy streams
 				readStream.destroy();
 				writeStream.end();

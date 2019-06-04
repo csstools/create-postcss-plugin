@@ -13,7 +13,7 @@ Add [${title}] to your project:
 npm install ${id} --save-dev
 ```
 
-Use [${title}] to process your CSS:
+Use **${title}** to process your CSS:
 
 ```js
 const ${idCamelCase} = require('${id}');
@@ -40,7 +40,7 @@ Add [PostCSS CLI] to your project:
 npm install postcss-cli --save-dev
 ```
 
-Use [${title}] in your `postcss.config.js` configuration file:
+Use **${title}** in your `postcss.config.js` configuration file:
 
 ```js
 const ${idCamelCase} = require('${id}');
@@ -60,7 +60,7 @@ Add [PostCSS Loader] to your project:
 npm install postcss-loader --save-dev
 ```
 
-Use [${title}] in your Webpack configuration:
+Use **${title}** in your Webpack configuration:
 
 ```js
 const ${idCamelCase} = require('${id}');
@@ -94,7 +94,7 @@ Add [React App Rewired] and [React App Rewire PostCSS] to your project:
 npm install react-app-rewired react-app-rewire-postcss --save-dev
 ```
 
-Use [React App Rewire PostCSS] and [${title}] in your
+Use **React App Rewire PostCSS** and **${title}** in your
 `config-overrides.js` file:
 
 ```js
@@ -116,7 +116,7 @@ Add [Gulp PostCSS] to your project:
 npm install gulp-postcss --save-dev
 ```
 
-Use [${title}] in your Gulpfile:
+Use **${title}** in your Gulpfile:
 
 ```js
 const postcss = require('gulp-postcss');
@@ -139,7 +139,7 @@ Add [Grunt PostCSS] to your project:
 npm install grunt-postcss --save-dev
 ```
 
-Use [${title}] in your Gruntfile:
+Use **${title}** in your Gruntfile:
 
 ```js
 const ${idCamelCase} = require('${id}');

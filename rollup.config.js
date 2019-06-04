@@ -1,41 +1,28 @@
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
-const input = 'src/index.js';
-const output = { file: 'index.js', format: 'cjs' };
-
 export default {
-	input,
-	output,
+	input: 'src/index.js',
+	output: { file: 'index.js', format: 'cjs', strict: false },
 	plugins: [
 		babel({
 			plugins: [
 				'@babel/syntax-dynamic-import'
 			],
 			presets: [
-				['@babel/env', { modules: false, targets: { node: 6 } }]
+				['@babel/env', { modules: false, targets: { node: 8 } }]
 			]
 		}),
 		terser(),
-		trimUseStrict(),
 		addHashBang()
 	]
 };
 
-function addHashBang() {
+function addHashBang () {
 	return {
 		name: 'add-hash-bang',
-		renderChunk(code) {
+		renderChunk (code) {
 			return `#!/usr/bin/env node\n${code}`;
-		}
-	};
-}
-
-function trimUseStrict() {
-	return {
-		name: 'trim-use-strict',
-		renderChunk(code) {
-			return code.replace(/\s*('|")?use strict\1;\s*/, '');
 		}
 	};
 }
