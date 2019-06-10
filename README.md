@@ -5,7 +5,7 @@
 [![Gitter Chat][git-img]][git-url]
 
 [Create PostCSS Plugin] lets you quickly create new [PostCSS] plugins with
-documentation, tests, and built in compiling for supported Node environments.
+documentation, tests, and built-in compiling for supported Node environments.
 
 ```sh
 npm init postcss-plugin YOUR_DESTINATION
