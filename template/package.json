@@ -18,8 +18,9 @@
     "*"
   ],
   "scripts": {
+    "build": "rollup --config .rollup.js --silent",
     "prepublishOnly": "npm test",
-    "pretest": "rollup --config .rollup.js --silent",
+    "pretest:tape": "npm run build",
     "test": "npm run test:js && npm run test:tape",
     "test:js": "eslint src/{*,**/*}.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "postcss-tape"
@@ -31,14 +32,14 @@
     "postcss": "^7.0.17"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "postcss-tape": "^5.0.0",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "postcss-tape": "^5.0.2",
     "pre-commit": "^1.2.2",
-    "rollup": "^1.14.6",
-    "rollup-plugin-babel": "^4.3.2"
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3"
   },
   "eslintConfig": {
     "env": {

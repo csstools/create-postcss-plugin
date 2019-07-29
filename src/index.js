@@ -131,10 +131,16 @@ async function createTemplate () {
 }
 
 function getSuccessMessage () {
+	const cd = path.relative(process.cwd(), args.to);
+	const isCwd = cd === './';
+
 	return `Success! Created ${color.bold(args.title)} at ${color.bold(args.to)}
 
-We suggest that you begin by typing:
-  cd ${path.relative(process.cwd(), args.to)}
+We suggest that you begin by typing:${
+	isCwd
+		? ''
+	: `  cd ${cd}`
+}
   npm test
 
 Happy PostCSS-ing!\n`;
