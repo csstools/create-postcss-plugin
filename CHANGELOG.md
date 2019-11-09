@@ -1,5 +1,9 @@
 # Changes to Create PostCSS Plugin
 
+### 3.1.1 (November 9, 2019)
+
+- Updated: `postcss` to 7.0.21 (patch)
+
 ### 3.1.0 (July 29, 2019)
 
 - Added: Separated `build` task, automatically run before `test:tape`
